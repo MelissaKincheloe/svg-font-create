@@ -156,8 +156,8 @@ fstools.walkSync(args.input_dir, /[.]svg$/i, function (file) {
   transform += ' translate(0 ' + (fontHeight / 2) + ') scale(1 -1) translate(0 ' + (-fontHeight / 2) + ')';
 
   svgOut = svgImageTemplate({
-    height : glyph.height,
-    width  : glyph.width,
+    height : glyph.height*scale,
+    width  : glyph.width*scale,
     d      : glyph.d,
     transform : glyph.transform ? transform + ' ' + glyph.transform : transform
   });
